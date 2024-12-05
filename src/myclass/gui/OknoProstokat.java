@@ -2,6 +2,7 @@ package myclass.gui;
 
 import myclass.data.Figura;
 import myclass.data.Kwadrat;
+import myclass.data.Prostokat;
 
 import java.awt.*;
 
@@ -36,6 +37,10 @@ public class OknoProstokat extends OknoFigura {
 
     @Override
     public Figura getFigura() {
-        return new Kwadrat(textFieldNazwa.getText(),Double.parseDouble(tf_bok1.getText()));
+        try {
+            return new Prostokat(textFieldNazwa.getText(), Double.parseDouble(tf_bok1.getText()), Double.parseDouble(tf_bok2.getText()));
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 }

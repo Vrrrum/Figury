@@ -37,6 +37,10 @@ public class OknoTrojkat extends OknoFigura{
 
     @Override
     public Figura getFigura() {
-        return new Trojkat(textFieldNazwa.getText(), Double.parseDouble(tf_podstawa.getText()), Double.parseDouble(tf_wysokosc.getText()));
+        try {
+            return new Trojkat(textFieldNazwa.getText(), Double.parseDouble(tf_podstawa.getText()), Double.parseDouble(tf_wysokosc.getText()));
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 }

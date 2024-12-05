@@ -198,6 +198,8 @@ public class OknoStart extends Frame {
     public void dodajFigure(boolean zapisz) {
         if (zapisz) {
             Figura f = oknoFigura.getFigura();
+            if(f == null)
+                return;
             listaFigur.add(f.getNazwa());
             baza.add(f);
         }

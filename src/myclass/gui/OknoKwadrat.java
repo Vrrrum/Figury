@@ -24,6 +24,10 @@ public class OknoKwadrat extends OknoFigura{
 
     @Override
     public Figura getFigura() {
-        return new Kwadrat(textFieldNazwa.getText(),Double.parseDouble(textFieldbok.getText()));
+        try {
+            return new Kwadrat(textFieldNazwa.getText(), Double.parseDouble(textFieldbok.getText()));
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 }

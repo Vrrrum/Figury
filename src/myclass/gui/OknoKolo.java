@@ -25,6 +25,10 @@ public class OknoKolo extends OknoFigura{
 
     @Override
     public Figura getFigura() {
-        return new Kolo(textFieldNazwa.getText(),Double.parseDouble(tf_srednica.getText()));
+        try {
+            return new Kolo(textFieldNazwa.getText(), Double.parseDouble(tf_srednica.getText()));
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 }
